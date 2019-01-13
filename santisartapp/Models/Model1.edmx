@@ -1,0 +1,522 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="testModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="rt">
+          <Key>
+            <PropertyRef Name="fgfg" />
+          </Key>
+          <Property Name="fgfg" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="gfgf" Type="int" />
+        </EntityType>
+        <EntityType Name="tblUsers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="varchar" MaxLength="11" StoreGeneratedPattern="Computed" />
+          <Property Name="fgfg" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="CLASS">
+          <Key>
+            <PropertyRef Name="CLASS_ID" />
+          </Key>
+          <Property Name="CLASS_ID" Type="int" Nullable="false" />
+          <Property Name="STATUS" Type="varchar" MaxLength="20" />
+          <Property Name="CLASS_NAME_ID" Type="varchar" MaxLength="5" />
+          <Property Name="TEACHER_ID" Type="int" />
+          <Property Name="CLASS_ROOM" Type="int" />
+          <Property Name="CLASS_YEAR_INDEX" Type="int" />
+        </EntityType>
+        <EntityType Name="CLASS_copy1">
+          <Key>
+            <PropertyRef Name="CLASS_ID" />
+          </Key>
+          <Property Name="CLASS_ID" Type="int" Nullable="false" />
+          <Property Name="STATUS" Type="varchar" MaxLength="20" />
+          <Property Name="CLASS_NAME_ID" Type="varchar" MaxLength="5" />
+          <Property Name="TEACHER_ID" Type="int" />
+          <Property Name="CLASS_ROOM" Type="int" />
+          <Property Name="CLASS_YEAR_INDEX" Type="int" />
+        </EntityType>
+        <EntityType Name="COMPONENT">
+          <Key>
+            <PropertyRef Name="COMPONENT_ID" />
+          </Key>
+          <Property Name="COMPONENT_ID" Type="int" Nullable="false" />
+          <Property Name="COMPONENT_TYPE" Type="varchar" MaxLength="255" />
+          <Property Name="COMPONENT_VALUE" Type="varchar" MaxLength="255" />
+          <Property Name="COMPONENT_NAME" Type="varchar" MaxLength="255" />
+          <Property Name="COMPONENT_DES" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="ENROLL_PAID">
+          <Key>
+            <PropertyRef Name="PAID_ID" />
+          </Key>
+          <Property Name="PAID_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="STUDENT_ID" Type="int" />
+          <Property Name="MONTHLY_ID" Type="int" />
+          <Property Name="TIMESTAMP" Type="datetime" />
+          <Property Name="STAFF_PAID_ID" Type="int" />
+          <Property Name="STUDENT_TYPE_ID" Type="int" />
+          <Property Name="PAID" Type="int" />
+          <Property Name="CLASS_ID" Type="int" />
+          <Property Name="PAY_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="ENROLL_PAY">
+          <Key>
+            <PropertyRef Name="PAY_ID" />
+          </Key>
+          <Property Name="PAY_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PAID_ID" Type="int" />
+          <Property Name="STUDENT_ID" Type="int" />
+          <Property Name="PAY" Type="int" />
+          <Property Name="STAFF_ID" Type="int" />
+          <Property Name="TIMESTAMP" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ENROLL_STUDENT_CLASS">
+          <Key>
+            <PropertyRef Name="ENROL_STU_CLASS_ID" />
+          </Key>
+          <Property Name="STUDENT_ID" Type="int" Nullable="false" />
+          <Property Name="CLASS_ID" Type="int" Nullable="false" />
+          <Property Name="ENROL_STU_CLASS_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FOOD">
+          <Key>
+            <PropertyRef Name="FOOD_ID" />
+          </Key>
+          <Property Name="FOOD_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FOOD_ID_STUDENT" Type="varchar" MaxLength="6" />
+          <Property Name="FOOD_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="FOOD_LASTNAME" Type="varchar" MaxLength="50" />
+          <Property Name="FOOD_MONTH_TH" Type="varchar" MaxLength="20" />
+          <Property Name="FOOD_MONTH_INDEX" Type="varchar" MaxLength="2" />
+          <Property Name="FOOD_PAID" Type="int" />
+          <Property Name="FOOD_FULL_PAID" Type="int" />
+          <Property Name="FOOD_CLASS" Type="varchar" MaxLength="5" />
+          <Property Name="FOOD_YEAR" Type="varchar" MaxLength="4" />
+          <Property Name="FOOD_TIMESATAMP" Type="datetime" />
+          <Property Name="FOOD_UPDATE" Type="varchar" MaxLength="50" />
+          <Property Name="FOOD_PAID_ID" Type="int" />
+          <Property Name="FOOD_TITLE" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="MONTHLY">
+          <Key>
+            <PropertyRef Name="MONTHLY_ID" />
+          </Key>
+          <Property Name="MONTHLY_ID" Type="int" Nullable="false" />
+          <Property Name="MONTH_NAME" Type="varchar" MaxLength="25" />
+          <Property Name="MONTH_YEAR" Type="int" />
+          <Property Name="MONTH_COURSE" Type="int" />
+          <Property Name="MONTH_STATUS" Type="bit" />
+          <Property Name="MONTH_YEARINDEX" Type="int" />
+        </EntityType>
+        <EntityType Name="STUDENTS">
+          <Key>
+            <PropertyRef Name="STUDENT_ID" />
+          </Key>
+          <Property Name="STUDENT_ID" Type="int" Nullable="false" />
+          <Property Name="STUDENT_TITLE" Type="varchar" MaxLength="10" />
+          <Property Name="STUDENT_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="STUDENT_LNAME" Type="varchar" MaxLength="100" />
+          <Property Name="STUDENT_BIRTHDAY" Type="datetime" />
+          <Property Name="STUDENT_IDCARD" Type="varchar" MaxLength="13" />
+          <Property Name="STUDENT_PSIS_ID" Type="int" />
+          <Property Name="STUDENT_STATUS" Type="varchar" MaxLength="25" />
+          <Property Name="STUDENT_TIMESTAMP" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'test.food.ddddd' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ddddd">
+          <Key>
+            <PropertyRef Name="STUDENT_ID" />
+            <PropertyRef Name="CLASS_ID" />
+            <PropertyRef Name="ENROL_STU_CLASS_ID" />
+          </Key>
+          <Property Name="STUDENT_ID" Type="int" Nullable="false" />
+          <Property Name="STUDENT_TITLE" Type="varchar" MaxLength="10" />
+          <Property Name="STUDENT_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="STUDENT_LNAME" Type="varchar" MaxLength="100" />
+          <Property Name="STUDENT_BIRTHDAY" Type="datetime" />
+          <Property Name="STUDENT_IDCARD" Type="varchar" MaxLength="13" />
+          <Property Name="STUDENT_PSIS_ID" Type="int" />
+          <Property Name="STUDENT_STATUS" Type="varchar" MaxLength="25" />
+          <Property Name="STUDENT_TIMESTAMP" Type="datetime" />
+          <Property Name="CLASS_ID" Type="int" Nullable="false" />
+          <Property Name="ENROL_STU_CLASS_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="testModelStoreContainer">
+          <EntitySet Name="rt" EntityType="Self.rt" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblUsers" EntityType="Self.tblUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CLASS" EntityType="Self.CLASS" Schema="food" store:Type="Tables" />
+          <EntitySet Name="CLASS_copy1" EntityType="Self.CLASS_copy1" Schema="food" store:Type="Tables" />
+          <EntitySet Name="COMPONENT" EntityType="Self.COMPONENT" Schema="food" store:Type="Tables" />
+          <EntitySet Name="ENROLL_PAID" EntityType="Self.ENROLL_PAID" Schema="food" store:Type="Tables" />
+          <EntitySet Name="ENROLL_PAY" EntityType="Self.ENROLL_PAY" Schema="food" store:Type="Tables" />
+          <EntitySet Name="ENROLL_STUDENT_CLASS" EntityType="Self.ENROLL_STUDENT_CLASS" Schema="food" store:Type="Tables" />
+          <EntitySet Name="FOOD" EntityType="Self.FOOD" Schema="food" store:Type="Tables" />
+          <EntitySet Name="MONTHLY" EntityType="Self.MONTHLY" Schema="food" store:Type="Tables" />
+          <EntitySet Name="STUDENTS" EntityType="Self.STUDENTS" Schema="food" store:Type="Tables" />
+          <EntitySet Name="ddddd" EntityType="Self.ddddd" store:Type="Views" store:Schema="food">
+            <DefiningQuery>SELECT 
+    [ddddd].[STUDENT_ID] AS [STUDENT_ID], 
+    [ddddd].[STUDENT_TITLE] AS [STUDENT_TITLE], 
+    [ddddd].[STUDENT_NAME] AS [STUDENT_NAME], 
+    [ddddd].[STUDENT_LNAME] AS [STUDENT_LNAME], 
+    [ddddd].[STUDENT_BIRTHDAY] AS [STUDENT_BIRTHDAY], 
+    [ddddd].[STUDENT_IDCARD] AS [STUDENT_IDCARD], 
+    [ddddd].[STUDENT_PSIS_ID] AS [STUDENT_PSIS_ID], 
+    [ddddd].[STUDENT_STATUS] AS [STUDENT_STATUS], 
+    [ddddd].[STUDENT_TIMESTAMP] AS [STUDENT_TIMESTAMP], 
+    [ddddd].[CLASS_ID] AS [CLASS_ID], 
+    [ddddd].[ENROL_STU_CLASS_ID] AS [ENROL_STU_CLASS_ID]
+    FROM [food].[ddddd] AS [ddddd]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="testModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="rt">
+          <Key>
+            <PropertyRef Name="fgfg" />
+          </Key>
+          <Property Name="fgfg" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="gfgf" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tblUsers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="String" MaxLength="11" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="fgfg" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CLASS">
+          <Key>
+            <PropertyRef Name="CLASS_ID" />
+          </Key>
+          <Property Name="CLASS_ID" Type="Int32" Nullable="false" />
+          <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CLASS_NAME_ID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="TEACHER_ID" Type="Int32" />
+          <Property Name="CLASS_ROOM" Type="Int32" />
+          <Property Name="CLASS_YEAR_INDEX" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CLASS_copy1">
+          <Key>
+            <PropertyRef Name="CLASS_ID" />
+          </Key>
+          <Property Name="CLASS_ID" Type="Int32" Nullable="false" />
+          <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CLASS_NAME_ID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="TEACHER_ID" Type="Int32" />
+          <Property Name="CLASS_ROOM" Type="Int32" />
+          <Property Name="CLASS_YEAR_INDEX" Type="Int32" />
+        </EntityType>
+        <EntityType Name="COMPONENT">
+          <Key>
+            <PropertyRef Name="COMPONENT_ID" />
+          </Key>
+          <Property Name="COMPONENT_ID" Type="Int32" Nullable="false" />
+          <Property Name="COMPONENT_TYPE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="COMPONENT_VALUE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="COMPONENT_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="COMPONENT_DES" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ENROLL_PAID">
+          <Key>
+            <PropertyRef Name="PAID_ID" />
+          </Key>
+          <Property Name="PAID_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="STUDENT_ID" Type="Int32" />
+          <Property Name="MONTHLY_ID" Type="Int32" />
+          <Property Name="TIMESTAMP" Type="DateTime" Precision="3" />
+          <Property Name="STAFF_PAID_ID" Type="Int32" />
+          <Property Name="STUDENT_TYPE_ID" Type="Int32" />
+          <Property Name="PAID" Type="Int32" />
+          <Property Name="CLASS_ID" Type="Int32" />
+          <Property Name="PAY_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ENROLL_PAY">
+          <Key>
+            <PropertyRef Name="PAY_ID" />
+          </Key>
+          <Property Name="PAY_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PAID_ID" Type="Int32" />
+          <Property Name="STUDENT_ID" Type="Int32" />
+          <Property Name="PAY" Type="Int32" />
+          <Property Name="STAFF_ID" Type="Int32" />
+          <Property Name="TIMESTAMP" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ENROLL_STUDENT_CLASS">
+          <Key>
+            <PropertyRef Name="ENROL_STU_CLASS_ID" />
+          </Key>
+          <Property Name="STUDENT_ID" Type="Int32" Nullable="false" />
+          <Property Name="CLASS_ID" Type="Int32" Nullable="false" />
+          <Property Name="ENROL_STU_CLASS_ID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FOOD">
+          <Key>
+            <PropertyRef Name="FOOD_ID" />
+          </Key>
+          <Property Name="FOOD_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FOOD_ID_STUDENT" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="FOOD_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FOOD_LASTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FOOD_MONTH_TH" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FOOD_MONTH_INDEX" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="FOOD_PAID" Type="Int32" />
+          <Property Name="FOOD_FULL_PAID" Type="Int32" />
+          <Property Name="FOOD_CLASS" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="FOOD_YEAR" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="FOOD_TIMESATAMP" Type="DateTime" Precision="3" />
+          <Property Name="FOOD_UPDATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FOOD_PAID_ID" Type="Int32" />
+          <Property Name="FOOD_TITLE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MONTHLY">
+          <Key>
+            <PropertyRef Name="MONTHLY_ID" />
+          </Key>
+          <Property Name="MONTHLY_ID" Type="Int32" Nullable="false" />
+          <Property Name="MONTH_NAME" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="MONTH_YEAR" Type="Int32" />
+          <Property Name="MONTH_COURSE" Type="Int32" />
+          <Property Name="MONTH_STATUS" Type="Boolean" />
+          <Property Name="MONTH_YEARINDEX" Type="Int32" />
+        </EntityType>
+        <EntityType Name="STUDENTS">
+          <Key>
+            <PropertyRef Name="STUDENT_ID" />
+          </Key>
+          <Property Name="STUDENT_ID" Type="Int32" Nullable="false" />
+          <Property Name="STUDENT_TITLE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="STUDENT_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="STUDENT_LNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="STUDENT_BIRTHDAY" Type="DateTime" Precision="3" />
+          <Property Name="STUDENT_IDCARD" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="STUDENT_PSIS_ID" Type="Int32" />
+          <Property Name="STUDENT_STATUS" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="STUDENT_TIMESTAMP" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ddddd">
+          <Key>
+            <PropertyRef Name="STUDENT_ID" />
+            <PropertyRef Name="CLASS_ID" />
+            <PropertyRef Name="ENROL_STU_CLASS_ID" />
+          </Key>
+          <Property Name="STUDENT_ID" Type="Int32" Nullable="false" />
+          <Property Name="STUDENT_TITLE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="STUDENT_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="STUDENT_LNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="STUDENT_BIRTHDAY" Type="DateTime" Precision="3" />
+          <Property Name="STUDENT_IDCARD" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="STUDENT_PSIS_ID" Type="Int32" />
+          <Property Name="STUDENT_STATUS" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="STUDENT_TIMESTAMP" Type="DateTime" Precision="3" />
+          <Property Name="CLASS_ID" Type="Int32" Nullable="false" />
+          <Property Name="ENROL_STU_CLASS_ID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="testEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="rt" EntityType="Self.rt" />
+          <EntitySet Name="tblUsers" EntityType="Self.tblUsers" />
+          <EntitySet Name="CLASS" EntityType="Self.CLASS" />
+          <EntitySet Name="CLASS_copy1" EntityType="Self.CLASS_copy1" />
+          <EntitySet Name="COMPONENT" EntityType="Self.COMPONENT" />
+          <EntitySet Name="ENROLL_PAID" EntityType="Self.ENROLL_PAID" />
+          <EntitySet Name="ENROLL_PAY" EntityType="Self.ENROLL_PAY" />
+          <EntitySet Name="ENROLL_STUDENT_CLASS" EntityType="Self.ENROLL_STUDENT_CLASS" />
+          <EntitySet Name="FOOD" EntityType="Self.FOOD" />
+          <EntitySet Name="MONTHLY" EntityType="Self.MONTHLY" />
+          <EntitySet Name="STUDENTS" EntityType="Self.STUDENTS" />
+          <EntitySet Name="ddddd" EntityType="Self.ddddd" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="testModelStoreContainer" CdmEntityContainer="testEntities">
+          <EntitySetMapping Name="rt">
+            <EntityTypeMapping TypeName="testModel.rt">
+              <MappingFragment StoreEntitySet="rt">
+                <ScalarProperty Name="fgfg" ColumnName="fgfg" />
+                <ScalarProperty Name="gfgf" ColumnName="gfgf" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblUsers">
+            <EntityTypeMapping TypeName="testModel.tblUsers">
+              <MappingFragment StoreEntitySet="tblUsers">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="fgfg" ColumnName="fgfg" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CLASS">
+            <EntityTypeMapping TypeName="testModel.CLASS">
+              <MappingFragment StoreEntitySet="CLASS">
+                <ScalarProperty Name="CLASS_ID" ColumnName="CLASS_ID" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="CLASS_NAME_ID" ColumnName="CLASS_NAME_ID" />
+                <ScalarProperty Name="TEACHER_ID" ColumnName="TEACHER_ID" />
+                <ScalarProperty Name="CLASS_ROOM" ColumnName="CLASS_ROOM" />
+                <ScalarProperty Name="CLASS_YEAR_INDEX" ColumnName="CLASS_YEAR_INDEX" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CLASS_copy1">
+            <EntityTypeMapping TypeName="testModel.CLASS_copy1">
+              <MappingFragment StoreEntitySet="CLASS_copy1">
+                <ScalarProperty Name="CLASS_ID" ColumnName="CLASS_ID" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="CLASS_NAME_ID" ColumnName="CLASS_NAME_ID" />
+                <ScalarProperty Name="TEACHER_ID" ColumnName="TEACHER_ID" />
+                <ScalarProperty Name="CLASS_ROOM" ColumnName="CLASS_ROOM" />
+                <ScalarProperty Name="CLASS_YEAR_INDEX" ColumnName="CLASS_YEAR_INDEX" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COMPONENT">
+            <EntityTypeMapping TypeName="testModel.COMPONENT">
+              <MappingFragment StoreEntitySet="COMPONENT">
+                <ScalarProperty Name="COMPONENT_ID" ColumnName="COMPONENT_ID" />
+                <ScalarProperty Name="COMPONENT_TYPE" ColumnName="COMPONENT_TYPE" />
+                <ScalarProperty Name="COMPONENT_VALUE" ColumnName="COMPONENT_VALUE" />
+                <ScalarProperty Name="COMPONENT_NAME" ColumnName="COMPONENT_NAME" />
+                <ScalarProperty Name="COMPONENT_DES" ColumnName="COMPONENT_DES" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ENROLL_PAID">
+            <EntityTypeMapping TypeName="testModel.ENROLL_PAID">
+              <MappingFragment StoreEntitySet="ENROLL_PAID">
+                <ScalarProperty Name="PAID_ID" ColumnName="PAID_ID" />
+                <ScalarProperty Name="STUDENT_ID" ColumnName="STUDENT_ID" />
+                <ScalarProperty Name="MONTHLY_ID" ColumnName="MONTHLY_ID" />
+                <ScalarProperty Name="TIMESTAMP" ColumnName="TIMESTAMP" />
+                <ScalarProperty Name="STAFF_PAID_ID" ColumnName="STAFF_PAID_ID" />
+                <ScalarProperty Name="STUDENT_TYPE_ID" ColumnName="STUDENT_TYPE_ID" />
+                <ScalarProperty Name="PAID" ColumnName="PAID" />
+                <ScalarProperty Name="CLASS_ID" ColumnName="CLASS_ID" />
+                <ScalarProperty Name="PAY_ID" ColumnName="PAY_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ENROLL_PAY">
+            <EntityTypeMapping TypeName="testModel.ENROLL_PAY">
+              <MappingFragment StoreEntitySet="ENROLL_PAY">
+                <ScalarProperty Name="PAY_ID" ColumnName="PAY_ID" />
+                <ScalarProperty Name="PAID_ID" ColumnName="PAID_ID" />
+                <ScalarProperty Name="STUDENT_ID" ColumnName="STUDENT_ID" />
+                <ScalarProperty Name="PAY" ColumnName="PAY" />
+                <ScalarProperty Name="STAFF_ID" ColumnName="STAFF_ID" />
+                <ScalarProperty Name="TIMESTAMP" ColumnName="TIMESTAMP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ENROLL_STUDENT_CLASS">
+            <EntityTypeMapping TypeName="testModel.ENROLL_STUDENT_CLASS">
+              <MappingFragment StoreEntitySet="ENROLL_STUDENT_CLASS">
+                <ScalarProperty Name="STUDENT_ID" ColumnName="STUDENT_ID" />
+                <ScalarProperty Name="CLASS_ID" ColumnName="CLASS_ID" />
+                <ScalarProperty Name="ENROL_STU_CLASS_ID" ColumnName="ENROL_STU_CLASS_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FOOD">
+            <EntityTypeMapping TypeName="testModel.FOOD">
+              <MappingFragment StoreEntitySet="FOOD">
+                <ScalarProperty Name="FOOD_ID" ColumnName="FOOD_ID" />
+                <ScalarProperty Name="FOOD_ID_STUDENT" ColumnName="FOOD_ID_STUDENT" />
+                <ScalarProperty Name="FOOD_NAME" ColumnName="FOOD_NAME" />
+                <ScalarProperty Name="FOOD_LASTNAME" ColumnName="FOOD_LASTNAME" />
+                <ScalarProperty Name="FOOD_MONTH_TH" ColumnName="FOOD_MONTH_TH" />
+                <ScalarProperty Name="FOOD_MONTH_INDEX" ColumnName="FOOD_MONTH_INDEX" />
+                <ScalarProperty Name="FOOD_PAID" ColumnName="FOOD_PAID" />
+                <ScalarProperty Name="FOOD_FULL_PAID" ColumnName="FOOD_FULL_PAID" />
+                <ScalarProperty Name="FOOD_CLASS" ColumnName="FOOD_CLASS" />
+                <ScalarProperty Name="FOOD_YEAR" ColumnName="FOOD_YEAR" />
+                <ScalarProperty Name="FOOD_TIMESATAMP" ColumnName="FOOD_TIMESATAMP" />
+                <ScalarProperty Name="FOOD_UPDATE" ColumnName="FOOD_UPDATE" />
+                <ScalarProperty Name="FOOD_PAID_ID" ColumnName="FOOD_PAID_ID" />
+                <ScalarProperty Name="FOOD_TITLE" ColumnName="FOOD_TITLE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MONTHLY">
+            <EntityTypeMapping TypeName="testModel.MONTHLY">
+              <MappingFragment StoreEntitySet="MONTHLY">
+                <ScalarProperty Name="MONTHLY_ID" ColumnName="MONTHLY_ID" />
+                <ScalarProperty Name="MONTH_NAME" ColumnName="MONTH_NAME" />
+                <ScalarProperty Name="MONTH_YEAR" ColumnName="MONTH_YEAR" />
+                <ScalarProperty Name="MONTH_COURSE" ColumnName="MONTH_COURSE" />
+                <ScalarProperty Name="MONTH_STATUS" ColumnName="MONTH_STATUS" />
+                <ScalarProperty Name="MONTH_YEARINDEX" ColumnName="MONTH_YEARINDEX" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STUDENTS">
+            <EntityTypeMapping TypeName="testModel.STUDENTS">
+              <MappingFragment StoreEntitySet="STUDENTS">
+                <ScalarProperty Name="STUDENT_ID" ColumnName="STUDENT_ID" />
+                <ScalarProperty Name="STUDENT_TITLE" ColumnName="STUDENT_TITLE" />
+                <ScalarProperty Name="STUDENT_NAME" ColumnName="STUDENT_NAME" />
+                <ScalarProperty Name="STUDENT_LNAME" ColumnName="STUDENT_LNAME" />
+                <ScalarProperty Name="STUDENT_BIRTHDAY" ColumnName="STUDENT_BIRTHDAY" />
+                <ScalarProperty Name="STUDENT_IDCARD" ColumnName="STUDENT_IDCARD" />
+                <ScalarProperty Name="STUDENT_PSIS_ID" ColumnName="STUDENT_PSIS_ID" />
+                <ScalarProperty Name="STUDENT_STATUS" ColumnName="STUDENT_STATUS" />
+                <ScalarProperty Name="STUDENT_TIMESTAMP" ColumnName="STUDENT_TIMESTAMP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ddddd">
+            <EntityTypeMapping TypeName="testModel.ddddd">
+              <MappingFragment StoreEntitySet="ddddd">
+                <ScalarProperty Name="STUDENT_ID" ColumnName="STUDENT_ID" />
+                <ScalarProperty Name="STUDENT_TITLE" ColumnName="STUDENT_TITLE" />
+                <ScalarProperty Name="STUDENT_NAME" ColumnName="STUDENT_NAME" />
+                <ScalarProperty Name="STUDENT_LNAME" ColumnName="STUDENT_LNAME" />
+                <ScalarProperty Name="STUDENT_BIRTHDAY" ColumnName="STUDENT_BIRTHDAY" />
+                <ScalarProperty Name="STUDENT_IDCARD" ColumnName="STUDENT_IDCARD" />
+                <ScalarProperty Name="STUDENT_PSIS_ID" ColumnName="STUDENT_PSIS_ID" />
+                <ScalarProperty Name="STUDENT_STATUS" ColumnName="STUDENT_STATUS" />
+                <ScalarProperty Name="STUDENT_TIMESTAMP" ColumnName="STUDENT_TIMESTAMP" />
+                <ScalarProperty Name="CLASS_ID" ColumnName="CLASS_ID" />
+                <ScalarProperty Name="ENROL_STU_CLASS_ID" ColumnName="ENROL_STU_CLASS_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
